@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #404C51;
+    margin: 0;
+    padding: 0;
+}
+
+label { font-weight: bold; }
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+    }
+}
+
+.px-1 { padding: 1rem 0; }
+
+.text-left { text-align: left; }
+
+.mr-2 { margin-right: 40rem; }
+.mb { margin-bottom: .6rem; }
+
+.font-500 { font-weight: 500; }
