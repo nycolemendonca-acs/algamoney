@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PesquisaPessoasComponent } from './pesquisa-pessoas/pesquisa-pessoas.component';
 import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
+import { CampoColoridoDirective } from './campo-colorido.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.co
     NavbarComponent,
     PesquisaPessoasComponent,
     FuncionarioCardComponent,
-    FuncionarioFormComponent
+    FuncionarioFormComponent,
+    CampoColoridoDirective
   ],
   imports: [
     BrowserModule,

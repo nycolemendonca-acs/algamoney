@@ -36,13 +36,13 @@
   
             <ng-template pTemplate="body" let-lancamento>
               <tr>
-                <th class="text-left font-500">{{lancamento.pessoa}}</th>
-                <th class="text-left font-500">{{lancamento.descricao}}</th>
-                <th class="text-left font-500">{{lancamento.vencimento}}</th>
-                <th class="text-left font-500">{{lancamento.pagamento}}</th>
+                <th class="text-left font-500">{{ lancamento.pessoa | titlecase }}</th>
+                <th class="text-left font-500">{{ lancamento.descricao }}</th>
+                <th class="text-left font-500">{{ lancamento.vencimento }}</th>
+                <th class="text-left font-500">{{ lancamento.pagamento }}</th>
                 <th
                 class="text-left  font-500" 
-                [style.color]="lancamento.tipo === 'DESPESA' ? 'red' : 'blue'">{{lancamento.valor}}</th>
+                [style.color]="lancamento.tipo === 'DESPESA' ? 'red' : 'blue'">{{lancamento.valor | number: '1.2-2' }}</th>
                 <th class="text-left">
                     <a 
                     style="margin-right: 1rem;"

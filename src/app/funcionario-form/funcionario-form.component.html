@@ -1,7 +1,30 @@
 <section class="container">
     <div class="p-grid px-1">
-        <label style="display: block;" class="mb">Nome</label>
-        <input type="text" pInputText style="width: 100%;">
-        <button pButton class="px-1" label="Adicionar"></button>
+        <div class="p-col-12">
+            <label style="display: block;" class="mb">Nome</label>
+            <input 
+                type="text" 
+                pInputText
+                class="my-1"
+                style="width: 100%;"
+                appCampoColorido
+                #campo="campoColorido">
+
+            <button
+                type="button"
+                pButton
+                label="Adicionar"></button>
+
+            <button 
+                pButton 
+                label="Colorir" 
+                (click)="campo.colorir()" 
+                class="mx"></button>
+
+            <button 
+                pButton 
+                label="Descolorir"
+                (click)="campo.descolorir()"></button>
+        </div>
     </div>
 </section>
