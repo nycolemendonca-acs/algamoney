@@ -5,6 +5,7 @@
                 <a 
                     href="javascript:;" 
                     class="navbar-toggle"
+                    (click)="exibindoMenu = !exibindoMenu"
                     style="text-decoration: none;">
                     <i class="pi pi-align-justify"></i>
                 </a>
@@ -12,7 +13,7 @@
         </div>
     </div>
 
-    <ul class="navbar-menu">
+    <ul class="navbar-menu" [hidden]="!exibindoMenu">
         <li class="navbar-user">José da Silva</li>
         <li class="navbar-menuitem"><a href="#">Lançamentos</a></li>
         <li class="navbar-menuitem"><a href="#">Pessoas</a></li>

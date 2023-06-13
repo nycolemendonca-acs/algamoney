@@ -10,12 +10,18 @@ import { TooltipModule } from 'primeng/tooltip';
 import { AppComponent } from './app.component';
 import { PesquisaLancamentosComponent } from './pesquisa-lancamentos/pesquisa-lancamentos.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PesquisaPessoasComponent } from './pesquisa-pessoas/pesquisa-pessoas.component';
+import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
+import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PesquisaLancamentosComponent,
-    NavbarComponent
+    NavbarComponent,
+    PesquisaPessoasComponent,
+    FuncionarioCardComponent,
+    FuncionarioFormComponent
   ],
   imports: [
     BrowserModule,
