@@ -1,0 +1,61 @@
+<section class="container">
+    <form>
+        <div class="p-grid">
+            <div class="p-col-12">
+                <h1>Novo Lançamento</h1>
+            </div>
+
+            <div class="ui-g-12 mb">
+                <p-selectButton [options]="tipos" #tipo></p-selectButton>
+            </div>
+
+
+            <!-- Calendário não funciona -->
+            <div style="display: flex; gap: 1rem;" class="mb">
+                <div class="">
+                    <label for="vencimento" style="display: block;"> Vencimento </label>
+                    <p-calendar 
+                        dateFormat="dd/mm/yy"
+                        [inline]="false" 
+                        [readonlyInput]="false"
+                        [showIcon]="false"></p-calendar>
+                </div>
+    
+                <div class="mb">
+                    <label for="recebimento" style="display: block;">{{ tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagamento' }}</label>
+                    <p-calendar dateFormat="dd/mm/yy"></p-calendar>
+                </div>
+            </div>
+            <div class="p-col-12 p-md-9 p-fluid mb">
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao" pInputText>
+            </div>
+
+            <div class="p-col-12 p-md-3 p-fluid mb">
+                <label for="valor">Valor</label>
+                <input type="text" id="valor" placeholder="0.00" pInputText>
+            </div>
+
+            <div class="p-col-12 p-md-3 p-fluid mb">
+                <label for="categoria">Categoria</label>
+                <input type="text" id="categoria" pInputText>
+            </div>
+
+            <div class="p-col-12 p-md-6 p-fluid mb">
+                <label for="pessoa">Pessoa</label>
+                <input pInputText type="text" id="pessoa">
+              </div>
+
+              <div class="p-col-12 p-fluid mb">
+                <label for="observacao">Observação</label>
+                <textarea pInputTextarea id="observacao" rows="4" cols="30" style="resize: none;"></textarea>
+              </div>
+
+              <div class="p-col-4">
+                <button type="submit" label="Salvar" pButton style="margin-right: .6rem;"></button>
+                <button type="button" label="Novo" pButton style="margin-right: .6rem;"></button>
+                <a href="javascript:;">Voltar para a pesquisa</a>
+              </div>
+        </div>
+    </form>
+</section>

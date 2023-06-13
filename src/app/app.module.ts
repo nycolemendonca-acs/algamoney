@@ -6,6 +6,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { CalendarModule } from 'primeng/calendar';
+import { SelectButtonModule } from 'primeng/selectbutton';
+
 
 import { AppComponent } from './app.component';
 import { PesquisaLancamentosComponent } from './pesquisa-lancamentos/pesquisa-lancamentos.component';
@@ -14,6 +18,7 @@ import { PesquisaPessoasComponent } from './pesquisa-pessoas/pesquisa-pessoas.co
 import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
+import { CadastroLancamentosComponent } from './cadastro-lancamentos/cadastro-lancamentos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,8 @@ import { CampoColoridoDirective } from './campo-colorido.directive';
     PesquisaPessoasComponent,
     FuncionarioCardComponent,
     FuncionarioFormComponent,
-    CampoColoridoDirective
+    CampoColoridoDirective,
+    CadastroLancamentosComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,10 @@ import { CampoColoridoDirective } from './campo-colorido.directive';
     InputTextModule,
     ButtonModule,
     TableModule,
-    TooltipModule
+    TooltipModule,
+    InputTextareaModule,
+    CalendarModule,
+    SelectButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

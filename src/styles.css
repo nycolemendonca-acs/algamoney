@@ -21,6 +21,7 @@ label { font-weight: bold; }
 .text-left { text-align: left; }
 
 .my-2 { margin: 2rem 0;}
+.mx-1 { margin: 0 1rem;}
 .mr-2 { margin-right: 40rem; }
 .mb { margin-bottom: .6rem; }
 
