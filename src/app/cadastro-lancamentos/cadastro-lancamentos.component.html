@@ -1,5 +1,5 @@
 <section class="container">
-    <form>
+    <form autocomplete="off">
         <div class="p-grid">
             <div class="p-col-12">
                 <h1>Novo Lançamento</h1>
@@ -9,53 +9,73 @@
                 <p-selectButton [options]="tipos" #tipo></p-selectButton>
             </div>
 
-
-            <!-- Calendário não funciona -->
-            <div style="display: flex; gap: 1rem;" class="mb">
-                <div class="">
-                    <label for="vencimento" style="display: block;"> Vencimento </label>
-                    <p-calendar 
-                        dateFormat="dd/mm/yy"
-                        [inline]="false" 
-                        [readonlyInput]="false"
-                        [showIcon]="false"></p-calendar>
+            <div class="mb" style="display: flex; gap: 1rem;"> <!-- VENCIMENTO -->
+                <div style="width: 50%;">
+                    <label for="vencimento" style="display: block;">Vencimento</label>
+                    <input type="date" name="" id="vencimento" style="width: 100%;" pInputText>
                 </div>
-    
-                <div class="mb">
+                <div style="width: 50%;"> <!-- PAGAMENTO ou DESPESA -->
                     <label for="recebimento" style="display: block;">{{ tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagamento' }}</label>
-                    <p-calendar dateFormat="dd/mm/yy"></p-calendar>
+                    <input type="date" id="recebimento" style="width: 100%;" pInputText>
                 </div>
             </div>
-            <div class="p-col-12 p-md-9 p-fluid mb">
-                <label for="descricao">Descrição</label>
-                <input type="text" id="descricao" pInputText>
+
+            <div class="p-col-12 p-md-9 p-fluid mb" style="display: flex; gap: 1rem;"> <!-- DESCRIÇÃO -->
+                <div style="width: 70%;">
+                    <label for="descricao">Descrição</label>
+                    <input 
+                        type="text"     
+                        id="descricao" 
+                        name="descricao" 
+                        ngModel 
+                        pInputText 
+                        #descricao="ngModel"
+                        required
+                        minlength="5">
+    
+                    <app-message [control]="descricao" error="required" text="Informe uma descrição"></app-message>
+                    <app-message 
+                        [control]="descricao" 
+                        error="minlength" 
+                        text="Mínimo de {{ descricao.errors?.minlength.requiredLength }} caracteres."></app-message>
+                </div>
+
+                <div style="width: 30%;"> <!-- VALOR -->
+                    <label for="valor">Valor</label>
+                    <input 
+                        pInputText 
+                        type="number" 
+                        placeholder="0,00" 
+                        name="valor" 
+                        currencyMask
+                        options="{ prefix: '', thousands: '.', decimal: ',', allowNegative: false }"
+                        ngModel
+                        style="width: 100%;">
+                </div>
             </div>
 
-            <div class="p-col-12 p-md-3 p-fluid mb">
-                <label for="valor">Valor</label>
-                <input type="text" id="valor" placeholder="0.00" pInputText>
+            <div style="display: flex; gap: 1rem;">
+                <div class="p-col-12 p-md-3 p-fluid mb" style="width: 50%;">
+                    <label for="categoria">Categoria</label>
+                    <p-dropdown [options]="categorias" placeholder="Selecione" #categoria></p-dropdown>
+                </div>
+
+                <div class="p-col-12 p-md-6 p-fluid mb" style="width: 50%;">
+                    <label for="pessoa">Pessoa</label>
+                    <p-dropdown [options]="pessoas" placeholder="Selecione" #pessoa></p-dropdown>
+                </div>
             </div>
 
-            <div class="p-col-12 p-md-3 p-fluid mb">
-                <label for="categoria">Categoria</label>
-                <input type="text" id="categoria" pInputText>
+            <div class="p-col-12 p-fluid mb">
+            <label for="observacao">Observação</label>
+            <textarea pInputTextarea id="observacao" rows="4" cols="30" style="resize: none;"></textarea>
             </div>
 
-            <div class="p-col-12 p-md-6 p-fluid mb">
-                <label for="pessoa">Pessoa</label>
-                <input pInputText type="text" id="pessoa">
-              </div>
-
-              <div class="p-col-12 p-fluid mb">
-                <label for="observacao">Observação</label>
-                <textarea pInputTextarea id="observacao" rows="4" cols="30" style="resize: none;"></textarea>
-              </div>
-
-              <div class="p-col-4">
-                <button type="submit" label="Salvar" pButton style="margin-right: .6rem;"></button>
-                <button type="button" label="Novo" pButton style="margin-right: .6rem;"></button>
-                <a href="javascript:;">Voltar para a pesquisa</a>
-              </div>
+            <div class="p-col-4" style="display: flex; align-items: center;">
+            <button type="submit" label="Salvar" pButton style="margin-right: .6rem;"></button>
+            <button type="button" label="Novo" pButton style="margin-right: .6rem;"></button>
+            <a href="javascript:;">Voltar para a pesquisa</a>
+            </div>
         </div>
     </form>
 </section>

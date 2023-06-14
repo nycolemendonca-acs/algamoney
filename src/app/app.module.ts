@@ -7,8 +7,10 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { CalendarModule } from 'primeng/calendar';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { DropdownModule } from 'primeng/dropdown';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { InputMaskModule } from 'primeng/inputmask';
 
 
 import { AppComponent } from './app.component';
@@ -19,6 +21,11 @@ import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.co
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { CadastroLancamentosComponent } from './cadastro-lancamentos/cadastro-lancamentos.component';
+import { CadastroPessoasComponent } from './cadastro-pessoas/cadastro-pessoas.component';
+import { FormsModule } from '@angular/forms';
+import { MessageComponent } from './message/message.component';
+import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
+import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +36,11 @@ import { CadastroLancamentosComponent } from './cadastro-lancamentos/cadastro-la
     FuncionarioCardComponent,
     FuncionarioFormComponent,
     CampoColoridoDirective,
-    CadastroLancamentosComponent
+    CadastroLancamentosComponent,
+    CadastroPessoasComponent,
+    MessageComponent,
+    LancamentosGridComponent,
+    PessoasGridComponent
   ],
   imports: [
     BrowserModule,
@@ -39,8 +50,11 @@ import { CadastroLancamentosComponent } from './cadastro-lancamentos/cadastro-la
     TableModule,
     TooltipModule,
     InputTextareaModule,
-    CalendarModule,
-    SelectButtonModule
+    SelectButtonModule,
+    DropdownModule,
+    MultiSelectModule,
+    InputMaskModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
