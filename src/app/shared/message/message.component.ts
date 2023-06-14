@@ -13,13 +13,7 @@ import { FormControl } from '@angular/forms';
   ]
 })
 
-export class MessageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class MessageComponent {
   @Input() error: string;
   @Input() control: FormControl;
   @Input() text: string;
