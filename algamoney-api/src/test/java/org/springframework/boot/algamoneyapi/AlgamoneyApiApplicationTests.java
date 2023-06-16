@@ -1,10 +1,10 @@
-package com.algaworks.demo;
+package org.springframework.boot.algamoneyapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AlgamoneyApplicationTests {
+class AlgamoneyApiApplicationTests {
 
 	@Test
 	void contextLoads() {

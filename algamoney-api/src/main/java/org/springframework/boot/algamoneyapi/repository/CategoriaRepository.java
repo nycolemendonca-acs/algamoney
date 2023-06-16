@@ -1,8 +1,7 @@
-package com.algaworks.demo.repository;
+package org.springframework.boot.algamoneyapi.repository;
 
-import com.algaworks.demo.model.Categoria;
+import org.springframework.boot.algamoneyapi.model.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
-
 }
