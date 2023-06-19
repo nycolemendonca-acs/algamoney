@@ -1,6 +1,7 @@
 package org.springframework.boot.algamoneyapi.model;
 
 import jakarta.persistence.*;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.Objects;
 
@@ -10,6 +11,8 @@ public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
+    @NotNull
+    @Size(min = 3, max = 20)
     private String nome;
 
     public Long getCodigo() {
