@@ -6,13 +6,14 @@ import org.antlr.v4.runtime.misc.NotNull;
 import java.util.Objects;
 
 @Entity
-@Table(name = "categoria")
-public class Categoria {
+@Table(name = "pessoa")
+public class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
-
-    private String nome;
+    @NotNull private String nome;
+    @Embeddable private Endereco endereco;
+    @NotNull private Boolean ativo;
 
     public Long getCodigo() {
         return codigo;
@@ -30,16 +31,31 @@ public class Categoria {
         this.nome = nome;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Categoria categoria = (Categoria) o;
-        return Objects.equals(codigo, categoria.codigo);
+        Pessoa pessoa = (Pessoa) o;
+        return Objects.equals(codigo, pessoa.codigo) && Objects.equals(ativo, pessoa.ativo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codigo);
+        return Objects.hash(codigo, ativo);
     }
 }
