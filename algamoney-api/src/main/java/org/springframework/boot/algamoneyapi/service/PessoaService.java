@@ -12,8 +12,9 @@ public class PessoaService {
     @Autowired PessoaRepository pessoaRepository;
 
     public Pessoa atualizar(Long codigo, Pessoa pessoa) {
+        pessoa = buscarPessoaPeloCodigo(codigo);
         Pessoa pessoaSalva = pessoaRepository.findOne(codigo);
-        if (pessoaSalva == null) throw  new EmptyResultDataAccessException(1);
+
         BeanUtils.copyProperties(pessoa, pessoaSalva, "codigo");
         return pessoaRepository.save(pessoaSalva);
     }
@@ -28,5 +29,8 @@ public class PessoaService {
         Pessoa pessoaSalva = pessoaRepository.findOne(codigo);
         if (pessoaSalva == null) throw new EmptyResultDataAccessException(1);
         return pessoaSalva;
+    }
+
+    public Pessoa buscarPeloCodigo(Long codigo) {
     }
 }

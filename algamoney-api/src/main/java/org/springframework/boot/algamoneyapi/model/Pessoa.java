@@ -1,5 +1,6 @@
 package org.springframework.boot.algamoneyapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
@@ -42,6 +43,9 @@ public class Pessoa {
     public Boolean getAtivo() {
         return ativo;
     }
+    @JsonIgnore
+    @Transient
+    public Boolean isInativo() { return !this.ativo; }
 
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
