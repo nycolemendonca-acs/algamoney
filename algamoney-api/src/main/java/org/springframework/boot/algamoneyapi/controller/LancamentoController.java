@@ -55,4 +55,10 @@ public class LancamentoController {
                 .asList(new AlgamoneyExceptionHandler.Erro(mensagemUsuario, mensagemDesenvolvedor));
         return ResponseEntity.badRequest().body(erros);
     }
+
+    @DeleteMapping("/{codigo}")
+    @ResponseStatus
+    public void remover(@PathVariable Long codigo) {
+        lancamentoRepository.delete(codigo);
+    }
 }
